@@ -4,7 +4,7 @@ import { FcCamera } from "react-icons/fc";
 import { IoAttach } from "react-icons/io5";
 import { IoSend } from "react-icons/io5";
 import { TypeAnimation } from 'react-type-animation';
-import ResultModal from '../components/ai/resultModal';
+import ResultModal from '../components/ai/ResultModal';
 import { useOpenai4oMutation } from '../redux/api/api';
 import { useAsyncMutation } from '../hooks/hooks';
 import Camera from '../components/ai/Camera';
