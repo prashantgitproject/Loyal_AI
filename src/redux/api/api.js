@@ -14,8 +14,60 @@ const api = createApi({
             providesTags: ["ai"],
         }),
 
+        vision: builder.mutation({
+            query: (formData) => ({
+                url: "ai/vision",
+                method: "POST",
+                body: formData,
+            }),
+            invalidatesTags: ["ai"],
+        }),
+
+        openai4o: builder.mutation({
+            query: (formData) => ({
+                url: "ai/openai-4o",
+                method: "POST",
+                body: formData,
+            }),
+            invalidatesTags: ["ai"],
+        }),
+
+        openaimini: builder.mutation({
+            query: (formData) => ({
+                url: "ai/openai-4o-mini",
+                method: "POST",
+                body: formData,
+            }),
+            invalidatesTags: ["ai"],
+        }),
+
+        queDivider: builder.mutation({
+            query: (formData) => ({
+                url: "ai/question-divider",
+                method: "POST",
+                body: formData,
+            }),
+            invalidatesTags: ["ai"],
+        }),
+
+        wolfram: builder.mutation({
+            query: (formData) => ({
+                url: "ai/wolfram",
+                method: "POST",
+                body: formData,
+            }),
+            invalidatesTags: ["ai"],
+        }),
+
     }),
 })
 
 export default api;
-export const { useTestQuery } = api;
+export const { 
+    useTestQuery,
+    useVisionMutation,
+    useOpenai4oMutation,
+    useOpenaiminiMutation,
+    useQueDividerMutation,
+    useWolframMutation,
+ } = api;
