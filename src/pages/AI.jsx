@@ -65,10 +65,10 @@ const AI = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     onOpen();
-    // const formData = new FormData()
-    // formData.append('text', text)
-    // formData.append('base64String', base64String)
-    // await sendTo4o('Sending text to OpenAI...', formData)
+    const formData = new FormData()
+    formData.append('text', text)
+    formData.append('base64String', base64String)
+    await sendTo4o('Sending text to OpenAI...', formData)
   }
 
   const handleClose = () => {

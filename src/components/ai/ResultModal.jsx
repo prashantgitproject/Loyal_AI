@@ -26,12 +26,12 @@ import toast from 'react-hot-toast';
 
 const ResultModal = ({preview, isOpen, onClose, loading, data}) => {
 
-  // useEffect(() => {
-  //   if(data === 'error'){
-  //     onClose();
-  //     toast.error('Something went wrong. Please try again.');
-  //   }
-  // }, [data])
+  useEffect(() => {
+    if(data === 'error'){
+      onClose();
+      toast.error('Something went wrong. Please try again.');
+    }
+  }, [data])
 
   return (
     <div>
@@ -46,8 +46,8 @@ const ResultModal = ({preview, isOpen, onClose, loading, data}) => {
                     {preview && <img src={preview} alt='preview' className='h-28 rounded-lg shadow-lg mb-8'/>}
                       <MathJaxContext>
                         <MathJax>
-                          {/* {data?.result} */}
-                          {"\\(\\frac{10}{4x} \\approx 2^{12}\\)"}
+                          {data?.result}
+                          {/* {"\\(\\frac{10}{4x} \\approx 2^{12}\\)"} */}
                         </MathJax>
                       </MathJaxContext>
                     </>
