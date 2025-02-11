@@ -83,7 +83,7 @@ const AI = () => {
   return (
     <>
     <div className=''>
-      <div className='flex justify-center items-center gap-2 mt-32'>
+      <div className='flex flex-col md:flex-row justify-center items-center gap-2 mt-32'>
         <img className='w-[4.5rem] h-[3.5rem]' src="/favicon.ico" alt="icon" />
         <div>
           <TypeAnimation
@@ -99,7 +99,7 @@ const AI = () => {
       </div>
 
       <div className='mt-16'>
-        <form className='border border-1 border-gray-500 rounded-lg w-[60vw] mx-auto p-1'>
+        <form className='border border-1 border-gray-500 rounded-lg md:w-[60vw] w-[90vw] mx-auto p-1'>
           
           <div className='flex justify-between items-start'>
             <textarea className='p-4 outline-none w-full h-[5rem]' placeholder='Type text..' value={text} onChange={e => setText(e.target.value)} type="text" />
@@ -125,9 +125,9 @@ const AI = () => {
       <Examples setPreview={setPreview} setText={setText} setBase64String={setBase64String}/>
       <Video/>
 
-      <div className='w-[60vw] mx-auto mt-32 mb-4'>
+      <div className='md:w-[60vw] w-[90vw] mx-auto mt-32 mb-4'>
         <h2 className='text-center text-xl font-bold mb-2'>Why LoyalAI?</h2>
-        <div className='flex justify-around items-center gap-4'>
+        <div className='flex flex-col md:flex-row justify-around items-center gap-4'>
           <div className='rounded-lg shadow-md p-8 border'>
             <h3 className='text-center text-lg font-semibold mb-2'>Get the Most Accurate Solution</h3>
             <p className='text-sm text-gray-500'>Mathos AI offers the most accurate math solutions across every level and topic—whether you’re solving algebra, calculus, quadratic equation, scientific notation, or anything in between. Our advanced AI model is 20% more accurate than ChatGPT and any other tool out there, giving you answers you can trust. No other math solver can match this level of precision!</p>

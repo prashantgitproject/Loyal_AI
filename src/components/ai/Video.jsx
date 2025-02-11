@@ -2,8 +2,8 @@ import React from 'react'
 
 const Video = () => {
   return (
-    <div className='w-[60vw] mx-auto mt-32 mb-8'>
-        <div className='rounded-lg shadow-xl border p-8 flex gap-2 justify-around items-center'>
+    <div className='md:w-[60vw] w-[90vw] mx-auto mt-32 mb-8'>
+        <div className='rounded-lg shadow-xl border p-2 md:p-8 flex flex-col md:flex-row gap-2 justify-around items-center'>
             <div className='flex flex-col gap-4 justify-center items-center'>
                 <h2 className='text-xl font-semibold'>How to use LoyalAI</h2>
                 <div className='text-gray-500 flex flex-col gap-1'>
