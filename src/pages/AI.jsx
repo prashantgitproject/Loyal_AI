@@ -1,11 +1,11 @@
 import { useDisclosure } from '@chakra-ui/react';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FcCamera } from "react-icons/fc";
 import { IoAttach } from "react-icons/io5";
 import { IoSend } from "react-icons/io5";
 import { TypeAnimation } from 'react-type-animation';
 import ResultModal from '../components/ai/ResultModal';
-import { useOpenai4oMutation } from '../redux/api/api';
+import { useLoyalAIMutation } from '../redux/api/api';
 import { useAsyncMutation } from '../hooks/hooks';
 import Camera from '../components/ai/Camera';
 import Examples from '../components/ai/Examples';
@@ -16,7 +16,7 @@ const AI = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { isOpen: isCamOpen, onOpen: onCamOpen, onClose: onCamClose } = useDisclosure()
-  const [sendTo4o, isLoading, data] = useAsyncMutation(useOpenai4oMutation)
+  const [sendToLoyalAi, isLoading, data] = useAsyncMutation(useLoyalAIMutation)
   
   const [text, setText] = useState('');
   const [base64String, setBase64String] = useState('');
@@ -68,7 +68,7 @@ const AI = () => {
     const formData = new FormData()
     formData.append('text', text)
     formData.append('base64String', base64String)
-    await sendTo4o('Sending text to OpenAI...', formData)
+    await sendToLoyalAi('Sending text to OpenAI...', formData)
   }
 
   const handleClose = () => {
@@ -142,7 +142,7 @@ const AI = () => {
 
     </div>
 
-    <ResultModal preview={preview} isOpen={isOpen} onClose={handleClose} loading={isLoading} data={data}/>
+    <ResultModal preview={preview} isOpen={isOpen} onClose={handleClose} loading={isLoading} data1={data}/>
     <Camera isOpen={isCamOpen} onClose={onCamClose} camUrl={camUrl} setCamUrl={setCamUrl} handler={handleCam}/>
     </>
   )

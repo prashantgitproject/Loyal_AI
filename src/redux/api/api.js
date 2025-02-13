@@ -41,9 +41,9 @@ const api = createApi({
             invalidatesTags: ["ai"],
         }),
 
-        queDivider: builder.mutation({
+        loyalAI: builder.mutation({
             query: (formData) => ({
-                url: "ai/question-divider",
+                url: "ai/loyalai",
                 method: "POST",
                 body: formData,
             }),
@@ -68,6 +68,6 @@ export const {
     useVisionMutation,
     useOpenai4oMutation,
     useOpenaiminiMutation,
-    useQueDividerMutation,
+    useLoyalAIMutation,
     useWolframMutation,
  } = api;
