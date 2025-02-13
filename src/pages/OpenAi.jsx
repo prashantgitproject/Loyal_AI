@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useFileHandler, useInputValidation } from "6pp"
-import { useOpenai4oMutation, useOpenaiminiMutation, useQueDividerMutation } from '../redux/api/api'
+import { useOpenai4oMutation, useOpenaiminiMutation } from '../redux/api/api'
 import { useAsyncMutation } from '../hooks/hooks'
 
 const OpenAi = () => {
 
   const text = useInputValidation(``)
 
-  const [sendToDivider, isLoading, data] = useAsyncMutation(useQueDividerMutation)
+  const [sendToDivider, isLoading, data] = useAsyncMutation(useOpenai4oMutation)
   const [base64String, setBase64String] = useState('');
 
   const handleFileChange = (event) => {
